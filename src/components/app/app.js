@@ -16,13 +16,13 @@ export default function App() {
 
 
     const selectField = (e) => {
-        if (!fieldId){
-            console.log('Выберете поле');
+        if (!fieldId || tables.length <= 0){
+            console.log('Err');
             return
         }
 
         const text = {}
-        
+
         text[fieldId.current] = e.target.value
 
         const newTable = {...tables[pageId], tableContent: {...tables[pageId].tableContent, ...text}}
@@ -67,12 +67,14 @@ export default function App() {
     }
     
     const onSearch = (term) => {
+        if (tables.length > 0) {
             for(let key in tables[pageId].tableContent){
                 document.getElementById(key).style.background = ''
                 if (tables[pageId].tableContent[key].indexOf(term) > -1 && term != ''){
                     document.getElementById(key).style.background = 'red'
                 }
             }
+        }
     }
 
     return (
