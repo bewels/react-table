@@ -1,0 +1,12 @@
+.page-tabs{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-page{
+    border: 1px solid black;
+    
+}
+
+

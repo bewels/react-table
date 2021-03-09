@@ -1,0 +1,43 @@
+.create-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50vh;
+    height: auto;
+    flex-direction: column;
+}
+
+.create-btn{
+    position: relative;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.create-btn:hover{
+    color: white;
+}
+.create-btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    background: #000;
+    z-index: -1;
+    transition: height .2s linear;
+}
+.create-btn:hover::before{
+    height: 100%;
+}
+
+.table-form-input{
+    width: 25%;
+}
+.create-form form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
